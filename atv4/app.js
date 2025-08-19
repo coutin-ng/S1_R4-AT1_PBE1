@@ -7,7 +7,7 @@ app.get("/ano/:ano", (req, res) => {
     try {
         const { ano } = req.params;
 
-        if (isNaN(ano)) {
+        if (isNaN(ano) || ano < 0) {
             return res.status(400).send(`Número inválido`)
         }
         if (ano % 4 == 0) {
